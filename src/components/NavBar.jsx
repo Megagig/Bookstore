@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
@@ -7,7 +7,7 @@ function NavBar() {
       <h2>Bookstore CMS</h2>
       <Link to="/">Home</Link>
       <Link to="/categories">Categories</Link>
-      <button type="button">Profile Icon</button>
+      <button type="button">My Icon</button>
     </div>
   );
 }

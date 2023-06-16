@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import PropTypes from 'prop-types';
 
 const BookItem = ({ book }) => {
@@ -29,7 +29,7 @@ const BookItem = ({ book }) => {
         <div className="chapter-container">
           <p>Current Chapter</p>
           <p>{chapter}</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <button type="button">Update Progress</button>
         </div>
       </div>
     </>
