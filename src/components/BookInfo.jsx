@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addBook } from '../redux/bookSlice';
+import { addBook } from '../redux/books/bookSlice';
 
 const NewBooks = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBooks, removeBook } from '../redux/bookSlice';
+import { fetchBooks, removeBook } from '../redux/books/bookSlice';
 
 const BookItem = () => {
   const dispatch = useDispatch();
