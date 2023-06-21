@@ -1,45 +1,84 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { nanoid } from 'nanoid';
+import { addBook } from '../redux/bookSlice';
 
-import PropTypes from 'prop-types';
+const NewBooks = () => {
+  const dispatch = useDispatch();
+  const [bookData, setBookData] = useState({
+    title: '',
+    author: '',
+    category: '',
+  });
 
-const BookInfo = ({ handleAddBook }) => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const { title, author, category } = bookData;
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setBookData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const addBookHandler = (e) => {
     e.preventDefault();
-    if (title.trim() && author.trim()) {
-      handleAddBook(title.trim(), author.trim());
-      setTitle('');
-      setAuthor('');
+
+    if (title !== '' && author !== '' && category !== '') {
+      const newBook = {
+        item_id: nanoid(),
+        title,
+        author,
+        category,
+      };
+
+      dispatch(addBook(newBook));
+      setBookData({
+        title: '',
+        author: '',
+        category: '',
+      });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <>
+      <form>
         <h3>Add a new book...</h3>
         <input
           type="text"
-          placeholder="Book Title"
+          name="title"
+          placeholder="Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleInputChange}
         />
         <input
           type="text"
-          placeholder="Book Author"
+          name="author"
+          placeholder="Author"
           value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          onChange={handleInputChange}
         />
-        <button type="submit">Add Book</button>
-      </div>
-    </form>
+        <select name="category" value={category} onChange={handleInputChange}>
+          <option value="">Select Category</option>
+          <option value="Memoir">Memoir</option>
+          <option value="Science">Science</option>
+          <option value="Travel">Travel</option>
+          <option value="Business/Finance">Business/Finance</option>
+          <option value="Poetry">Poetry</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Horror">Horror</option>
+          <option value="Comedy/Humor">Comedy/Humor</option>
+          <option value="Drama/Play">Drama/Play</option>
+          <option value="Novels/Comics">Novels/Comics</option>
+          <option value="Cookbooks">Cookbooks</option>
+        </select>
+        <button type="button" onClick={addBookHandler}>
+          Add Book
+        </button>
+      </form>
+    </>
   );
 };
 
-BookInfo.propTypes = {
-  handleAddBook: PropTypes.func.isRequired,
-};
-
-export default BookInfo;
+export default NewBooks;
