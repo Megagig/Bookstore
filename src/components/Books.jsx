@@ -1,39 +1,31 @@
 // import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBook, removeBook } from '../redux/books/bookSlice';
 import BookList from './BookList';
 import BookInfo from './BookInfo';
 
 const Books = () => {
-  const books = [
-    {
-      id: 1,
-      type: 'Novel',
-      title: 'Life of Elephants',
-      author: 'Ezeokeke Lucy',
-      percentage: 90,
-      chapter: 'Chapter 20',
-    },
-    {
-      id: 2,
-      type: 'Non-fiction',
-      title: 'The Millionaire Fastlane',
-      author: 'MJ DeMarco',
-      percentage: 50,
-      chapter: 'Chapter 10',
-    },
-    {
-      id: 3,
-      type: 'Fiction',
-      title: 'The Lord of the Rings',
-      author: 'J.R.R. Tolkien',
-      percentage: 10,
-      chapter: 'Chapter 1',
-    },
-  ];
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
+
+  const handleAddBook = (title, author) => {
+    const newBook = {
+      item_id: `item${books.length + 1}`,
+      title,
+      author,
+      category: 'Uncategorized',
+    };
+    dispatch(addBook(newBook));
+  };
+
+  const handleRemoveBook = (itemId) => {
+    dispatch(removeBook(itemId));
+  };
 
   return (
     <>
-      <BookList books={books} />
-      <BookInfo />
+      <BookList books={books} handleRemoveBook={handleRemoveBook} />
+      <BookInfo handleAddBook={handleAddBook} />
     </>
   );
 };
