@@ -25,8 +25,9 @@ const BookItem = () => {
   const renderBook = (itemId, book) => {
     const { category, title, author, chapter } = book[0];
 
-    const handleRemoveBook = () => {
-      dispatch(removeBook(itemId));
+    const handleRemoveBook = async () => {
+      await dispatch(removeBook(itemId));
+      await dispatch(fetchBooks());
     };
 
     return (

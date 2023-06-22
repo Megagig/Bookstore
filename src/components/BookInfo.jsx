@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addBook } from '../redux/books/bookSlice';
+import { addBook, fetchBooks } from '../redux/books/bookSlice';
 
 const NewBooks = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const NewBooks = () => {
     }));
   };
 
-  const addBookHandler = (e) => {
+  const addBookHandler = async (e) => {
     e.preventDefault();
 
     if (title !== '' && author !== '' && category !== '') {
@@ -32,7 +32,8 @@ const NewBooks = () => {
         category,
       };
 
-      dispatch(addBook(newBook));
+      await dispatch(addBook(newBook));
+      await dispatch(fetchBooks());
       setBookData({
         title: '',
         author: '',
@@ -61,17 +62,17 @@ const NewBooks = () => {
         />
         <select name="category" value={category} onChange={handleInputChange}>
           <option value="">Select Category</option>
-          <option value="Memoir">Memoir</option>
-          <option value="Science">Science</option>
-          <option value="Travel">Travel</option>
-          <option value="Business/Finance">Business/Finance</option>
-          <option value="Poetry">Poetry</option>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Horror">Horror</option>
-          <option value="Comedy/Humor">Comedy/Humor</option>
-          <option value="Drama/Play">Drama/Play</option>
-          <option value="Novels/Comics">Novels/Comics</option>
-          <option value="Cookbooks">Cookbooks</option>
+          <option value="Memoir">Religion</option>
+          <option value="Science">Technology</option>
+          <option value="Travel">Education</option>
+          <option value="Business/Finance">Business</option>
+          <option value="Poetry">Finance</option>
+          <option value="Science Fiction">Non-fiction</option>
+          <option value="Horror">Fiction</option>
+          <option value="Comedy/Humor">Agriculture</option>
+          <option value="Drama/Play">Music</option>
+          <option value="Novels/Comics">Drama</option>
+          <option value="Cookbooks">Science</option>
         </select>
         <button type="button" onClick={addBookHandler}>
           Add Book
