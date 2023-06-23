@@ -15,7 +15,6 @@ function NavBar() {
           <Link to="/categories" className="option">
             CATEGORIES
           </Link>
-          {/* <button type="button">My Icon</button> */}
         </div>
         <UilUser size="31" color="#0290ff" />
       </div>

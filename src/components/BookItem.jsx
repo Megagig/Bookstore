@@ -65,11 +65,11 @@ const BookItem = () => {
           <div className="status">
             <div className="progression">
               <progress value="75" min="0" max="100" style={style}>
-                75%
+                80%
               </progress>
             </div>
             <div className="movement">
-              <p className="percent">75%</p>
+              <p className="percent">80%</p>
               <p className="completed">Completed</p>
             </div>
           </div>
