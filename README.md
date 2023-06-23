@@ -178,7 +178,7 @@ npm run dev
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-coming soon
+- [Live Demo Link](https://bookstore-8z2y.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
