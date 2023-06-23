@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +12,12 @@ body {
   font-family: 'Montserrat', 'Times New Roman', Times, serif;
   background-color: #f5f6fa;
 }
+
 .nav-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   /* background-color: aqua; */
   margin: 0 auto;
   width: 80%;
@@ -31,15 +34,18 @@ body {
   align-items: center;
   gap: 3rem;
 }
+
 .logo {
   font-size: 2rem;
   color: #0290ff;
 }
+
 .homepage {
   color: #121212;
   font-weight: 500;
   font-size: 1.1rem;
 }
+
 .option {
   color: rgba(20, 20, 20, 0.6);
   letter-spacing: 1.9px;

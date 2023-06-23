@@ -2,6 +2,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f5f6fa;
 }
+
 .books {
   width: 80%;
   display: flex;
@@ -11,6 +12,7 @@ body {
   margin: 3rem auto 1rem;
   padding: 2rem;
 }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -26,12 +28,14 @@ body {
   letter-spacing: normal;
   opacity: 0.7;
 }
+
 .name {
   color: #121212;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-size: 1.4rem;
 }
+
 .owner {
   color: #4386bf;
   font-family: 'Roboto Slab', serif;
@@ -39,12 +43,14 @@ body {
   letter-spacing: normal;
   font-size: 1.1rem;
 }
+
 .key {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
+
 .btns {
   color: #4386bf;
   font-family: 'Roboto Slab', serif;
@@ -53,17 +59,20 @@ body {
   font-size: 1.1rem;
   background-color: transparent;
 }
+
 .remove {
   border-left: 3px solid #e8e8e8;
   border-right: 3px solid #e8e8e8;
   padding: 0 1.3rem;
 }
+
 .chapter-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
 }
+
 .progression {
   display: flex;
   justify-content: center;
@@ -71,11 +80,13 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+  background:
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
     conic-gradient(#0290ff calc(var(--progress-value) * 1%), #e8e8e8 0);
   animation: progress 2s 1 forwards;
   position: relative;
 }
+
 .progression::before {
   content: attr(data-progress) '';
   counter-reset: percentage;
@@ -84,11 +95,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 @keyframes progress {
   to {
     --progress-value: 75;
   }
 }
+
 .status {
   display: flex;
   justify-content: space-between;
@@ -105,11 +118,13 @@ body {
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-weight: 400;
 }
+
 .completed {
   font-size: 1rem;
   letter-spacing: 2px;
   opacity: 0.7;
 }
+
 .pages {
   display: flex;
   flex-direction: column;
@@ -117,12 +132,14 @@ body {
   align-items: flex-start;
   gap: 1rem;
 }
+
 .pages h3 {
   color: #121212;
   font-family: 'Roboto Slab', serif;
   font-weight: 600;
   opacity: 0.7;
 }
+
 .pages button {
   background: #0290ff;
   font-family: 'Roboto Slab', serif;
@@ -132,6 +149,7 @@ body {
   padding: 1rem 2rem;
   border-radius: 0.3rem;
 }
+
 .pages button:hover {
   background-color: #4aa5eb;
   cursor: pointer;

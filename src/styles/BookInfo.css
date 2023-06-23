@@ -5,6 +5,7 @@
   margin: 0 auto;
   width: 80%;
 }
+
 .form-holder input,
 .form-holder select {
   margin: 0.5rem;
@@ -15,6 +16,7 @@
   flex: 1;
   min-width: 150px;
 }
+
 .form-holder button {
   background: #0290ff;
   font-family: 'Roboto Slab', serif;
@@ -23,20 +25,24 @@
   padding: 1rem 2rem;
   border-radius: 0.3rem;
 }
+
 .form-holder button:hover {
   background-color: #4aa5eb;
   cursor: pointer;
 }
+
 .form-holder hr {
   margin: 3rem auto;
   width: 100%;
   border: 1px solid #e8e8e8;
 }
+
 .material {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .heading {
   font-weight: 700;
   font-size: 1.5rem;

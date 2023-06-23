@@ -29,7 +29,7 @@ const BookItem = () => {
     width: 0,
   };
   const renderBook = (itemId, book) => {
-    const { category, title, author, chapter } = book[0];
+    const { category, title, author } = book[0];
 
     const handleRemoveBook = async () => {
       await dispatch(removeBook(itemId));
