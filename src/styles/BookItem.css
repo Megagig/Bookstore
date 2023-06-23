@@ -1,0 +1,162 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f6fa;
+}
+
+.books {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 3rem auto 1rem;
+  padding: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.parts {
+  color: #515151;
+  font-weight: 600;
+  padding-bottom: 0.4rem;
+  letter-spacing: normal;
+  opacity: 0.7;
+}
+
+.name {
+  color: #121212;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.owner {
+  color: #4386bf;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  letter-spacing: normal;
+  font-size: 1.1rem;
+}
+
+.key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btns {
+  color: #4386bf;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  letter-spacing: normal;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #fff;
+}
+
+.remove {
+  padding: 0 1.3rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  font-size: 1.2rem;
+  color: rgb(67, 134, 191);
+  border-right: 1px solid rgb(232, 232, 232);
+  border-left: 1px solid rgb(232, 232, 232);
+}
+
+.chapter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.progression {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#0290ff calc(var(--progress-value) * 1%), #e8e8e8 0);
+  animation: progress 2s 1 forwards;
+  position: relative;
+}
+
+.progression::before {
+  content: attr(data-progress) '';
+  counter-reset: percentage;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes progress {
+  to {
+    --progress-value: 75;
+  }
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.4rem;
+  border-right: 3px solid #e8e8e8;
+}
+
+.percent {
+  color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-weight: 400;
+}
+
+.completed {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pages h3 {
+  color: #121212;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.pages button {
+  background: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.pages button:hover {
+  background-color: #4aa5eb;
+  cursor: pointer;
+}

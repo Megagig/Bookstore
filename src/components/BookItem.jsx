@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, removeBook } from '../redux/books/bookSlice';
+import '../styles/BookItem.css';
 
 const BookItem = () => {
   const dispatch = useDispatch();
@@ -22,8 +23,13 @@ const BookItem = () => {
     return null;
   }
 
+  const style = {
+    visibility: 'hidden',
+    height: 0,
+    width: 0,
+  };
   const renderBook = (itemId, book) => {
-    const { category, title, author, chapter } = book[0];
+    const { category, title, author } = book[0];
 
     const handleRemoveBook = async () => {
       await dispatch(removeBook(itemId));
@@ -31,29 +37,47 @@ const BookItem = () => {
     };
 
     return (
-      <div key={itemId}>
-        <div>
-          <p>{category}</p>
-          <h3>{title}</h3>
-          <p>{author}</p>
+      <div key={itemId} className="books">
+        <div className="content">
           <div>
-            <button type="button">Comment</button>
-            <div>
-              <button type="button" onClick={handleRemoveBook}>
-                Remove
-              </button>
-            </div>
-            <button type="button">Edit</button>
+            <p className="parts">{category}</p>
+            <h3 className="name">{title}</h3>
+            <p className="owner">{author}</p>
+          </div>
+          <div className="key">
+            <button type="button" className="btns">
+              Comment
+            </button>
+
+            <button
+              className="btn remove"
+              type="button"
+              onClick={handleRemoveBook}
+            >
+              Remove
+            </button>
+            <button type="button" className="btns">
+              Edit
+            </button>
           </div>
         </div>
-        <div>
-          <h4>75%</h4>
-          <div>Completed</div>
-        </div>
-        <div>
-          <h3>Current Chapter</h3>
-          <p>{chapter}</p>
-          <button type="button">Update Progress</button>
+        <div className="chapter-container">
+          <div className="status">
+            <div className="progression">
+              <progress value="75" min="0" max="100" style={style}>
+                80%
+              </progress>
+            </div>
+            <div className="movement">
+              <p className="percent">80%</p>
+              <p className="completed">Completed</p>
+            </div>
+          </div>
+          <div className="pages">
+            <h3>CURRENT CHAPTER</h3>
+            <p>Chapter 40</p>
+            <button type="button">UPDATE PROGRESS</button>
+          </div>
         </div>
       </div>
     );

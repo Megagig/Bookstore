@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.form-holder {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form-holder input,
+.form-holder select {
+  margin: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  border: 1.5px solid #ccc;
+  flex: 1;
+  min-width: 150px;
+}
+
+.form-holder button {
+  background: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  letter-spacing: 1.1px;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.form-holder button:hover {
+  background-color: #4aa5eb;
+  cursor: pointer;
+}
+
+.form-holder hr {
+  margin: 3rem auto;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+}
+
+.material {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #888;
+  margin-bottom: 1.3rem;
+}

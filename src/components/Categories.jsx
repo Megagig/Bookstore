@@ -1,7 +1,7 @@
 function Categories() {
   return (
     <div>
-      <h2>Categories Page</h2>
+      <h2>Under Construction</h2>
     </div>
   );
 }
