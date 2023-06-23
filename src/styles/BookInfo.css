@@ -24,6 +24,7 @@
   letter-spacing: 1.1px;
   padding: 1rem 2rem;
   border-radius: 0.3rem;
+  border: none;
 }
 
 .form-holder button:hover {
